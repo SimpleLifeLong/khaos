@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>khaos</artifactId>
+        <groupId>org.greece.mythology</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+        Gaea was the Ancient Greek personification of the Earth,
+        and, for all intents and purposes, the Mother of Everything Beautiful in the world.
+        Born spontaneously – either out of Nothingness or out of Chaos – Gaea brought forth (among others) Uranus,
+        with whom she subsequently mated to give birth to the Titans, themselves parents of most of the Olympians.
+        Gaea rebelled against the reigns of all three rulers of the universe (Uranus, Cronus, Zeus), but, ultimately,
+        she had to accept her grandson Zeus as the supreme king of all gods and men.
+    -->
+
+    <artifactId>gaea-gateway</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+    </dependencies>
+
+
+</project>

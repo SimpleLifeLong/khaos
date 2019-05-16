@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>khaos</artifactId>
+        <groupId>org.greece.mythology</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+        Tartarus was both a primordial deity that existed before the Olympians,
+        as well as a name to describe a region of the Underworld. As a god,
+        he was third in rank after Chaos and Gaea, preceding Eros.
+    -->
+
+    <artifactId>tartarus-commons</artifactId>
+
+
+</project>
