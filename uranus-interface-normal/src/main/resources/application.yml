@@ -1,0 +1,19 @@
+server:
+  port: 9990
+spring:
+  application:
+    name: uranus-interface-normal
+  jackson:
+    time-zone: CTT #Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+  redis:
+    database: 12
+    host: 10.39.48.16
+    port: 6379
+    password: FNpro0426
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+
