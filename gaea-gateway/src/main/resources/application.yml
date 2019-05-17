@@ -1,0 +1,23 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+spring:
+  application:
+    name: gaea-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - uri: lb://URANUS-INTERFACE-NORMAL
+          predicates:
+            - Path=/app/**
+          filters:
+            - Authorization=true
+server:
+  port: 9991
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

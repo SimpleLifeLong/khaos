@@ -6,6 +6,31 @@ spring:
   jackson:
     time-zone: CTT #Asia/Shanghai
     date-format: yyyy-MM-dd HH:mm:ss
+  ###### spring datasource ######
+  datasource:
+    url: jdbc:mysql://10.39.30.21:3306/wit-operation?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    username: wit-operation
+    password: wit-operation
+    type: com.alibaba.druid.pool.DruidDataSource # 使用druid数据源
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    # 配置监控统计拦截的filters，去掉后监控界面sql将无法统计，'wall'用于防火墙
+    filters: stat, wall, log4j
+    # 通过connectProperties属性来打开mergeSql功能，慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.logSlowSql=true;druid.stat.slowSqlMillis=5000
+
+  ###### spring redis ######
   redis:
     database: 12
     host: 10.39.48.16
