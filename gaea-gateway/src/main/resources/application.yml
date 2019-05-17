@@ -13,8 +13,9 @@ spring:
       routes:
         - uri: lb://URANUS-INTERFACE-NORMAL
           predicates:
-            - Path=/app/**
+            - Path=/gateway/**
           filters:
+            - StripPrefix=1
             - Authorization=true
 server:
   port: 9991
