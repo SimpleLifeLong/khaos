@@ -13,7 +13,7 @@ public class AuthorizationGatewayFilterFactory extends AbstractGatewayFilterFact
         return (exchange, chain) -> {
             String headerToken = exchange.getRequest().getHeaders().getFirst("Authorization");
             if (StringUtils.equals(headerToken, "UUID")) {
-                return chain.filter(exchange);
+                return chain.filter(exchange);   
             }
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
             return exchange.getResponse().setComplete();
