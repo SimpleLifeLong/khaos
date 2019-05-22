@@ -8,9 +8,9 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
   ###### spring datasource ######
   datasource:
-    url: jdbc:mysql://10.39.30.21:3306/wit-operation?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
-    username: wit-operation
-    password: wit-operation
+    url: jdbc:mysql://127.0.0.1:3306/cloud-dev?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    username: cloud-dev
+    password: cloud-dev
     type: com.alibaba.druid.pool.DruidDataSource # 使用druid数据源
     driver-class-name: com.mysql.cj.jdbc.Driver
     maxActive: 20

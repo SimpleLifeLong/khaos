@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -18,7 +19,12 @@ public class RedisServiceTest {
 
     @Test
     public void test1() {
-        redisTemplate.opsForValue().set("oo", "value");
+
+        HashOperations<String, String, String> hashOperations = redisTemplate.opsForHash();
+        hashOperations.put("123", "456", "789");
+//        Set<String> keys = redisTemplate.keys("");
+//        redisTemplate.delete(keys.iterator().next());
+
     }
 
 }
