@@ -17,7 +17,7 @@ public class PreventionAlarmRuleService {
 
 
     public PreventionAlarmRule getById(Long id) {
-        return repository.findById(id).get();
+        return repository.findById(id).orElse(null);
     }
 
     public PreventionAlarmRule getById2(Long id) {

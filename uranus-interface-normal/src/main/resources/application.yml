@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: uranus-interface-normal
+  jpa:
+    show-sql: true
   jackson:
     time-zone: CTT #Asia/Shanghai
     date-format: yyyy-MM-dd HH:mm:ss

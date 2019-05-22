@@ -17,6 +17,6 @@ public class AppController {
     @GetMapping("/user/{id}")
     public Object getUserInfo(@PathVariable Long id) {
 
-        return service.getById2(id);
+        return service.getById(id);
     }
 }
