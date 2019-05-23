@@ -48,7 +48,7 @@ public class GlobalExceptionHandler {
             message = error.getDefaultMessage();
         }
         log.error("MethodArgumentNotValidException occurred : {}", ex.getMessage());
-        return ResponseEntity.serverError(ARGUMENT_NOT_VALID, message);
+        return ResponseEntity.serverError(ARGUMENT_NOT_VALID.value(), message);
     }
 
     @ExceptionHandler(value = {ConstraintViolationException.class})
@@ -60,9 +60,9 @@ public class GlobalExceptionHandler {
         Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
         if (CollectionUtils.isNotEmpty(constraintViolations)) {
             ConstraintViolation<?> violation = constraintViolations.iterator().next();
-            message = String.format("%s", violation.getMessage());
+            message = violation.getMessage();
         }
-        return ResponseEntity.serverError(ARGUMENT_NOT_VALID, message);
+        return ResponseEntity.serverError(ARGUMENT_NOT_VALID.value(), message);
     }
 
 
