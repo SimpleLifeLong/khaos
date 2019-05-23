@@ -20,8 +20,8 @@ public class PreventionAlarmRuleService {
         return repository.findById(id).orElse(null);
     }
 
-    public PreventionAlarmRule getById2(Long id) {
-        return repository.getByIdAndStationIdLike(id);
+    public PreventionAlarmRule findByIdOrderByStationIdDesc(Long id) {
+        return repository.findByIdOrderByStationIdDesc(id);
     }
 
 }

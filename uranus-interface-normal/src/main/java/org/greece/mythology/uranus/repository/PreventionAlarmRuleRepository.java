@@ -10,4 +10,7 @@ public interface PreventionAlarmRuleRepository extends JpaRepository<PreventionA
 
     @Query(value = "select * from prevention_alarm_rule where id = ?1", nativeQuery = true)
     public PreventionAlarmRule getByIdAndStationIdLike(Long id);
+
+    PreventionAlarmRule findByIdOrderByStationIdDesc(Long id);
+
 }
