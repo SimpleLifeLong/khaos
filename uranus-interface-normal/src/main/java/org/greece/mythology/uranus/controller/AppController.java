@@ -21,8 +21,8 @@ public class AppController {
     private PreventionAlarmRuleService service;
 
     @PostMapping("/user")
-    public ResponseEntity getUserInfo() {
-        return ResponseEntity.ok(service.getAll(Pageable.unpaged()));
+    public ResponseEntity getUserInfo(Pageable pageable) {
+        return ResponseEntity.ok(service.getAll(pageable));
     }
 
     @PostMapping("/user/page")
