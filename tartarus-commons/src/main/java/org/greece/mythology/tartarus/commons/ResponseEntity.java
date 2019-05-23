@@ -10,6 +10,8 @@ public class ResponseEntity<T> {
 
     private final String statusDescription;
 
+    private final long timestamp;
+
     private final T body;
 
     public static <T> ResponseEntity ok(T body) {
@@ -29,11 +31,11 @@ public class ResponseEntity<T> {
     }
 
     public static <T> ResponseEntity of(ResponseStatus status, T body) {
-        return new ResponseEntity(status.value(), status.getDescription(), body);
+        return new ResponseEntity(status.value(), status.getDescription(), System.currentTimeMillis(), body);
     }
 
     public static <T> ResponseEntity of(Object statusCode, String statusDescription, T body) {
-        return new ResponseEntity(statusCode, statusDescription, body);
+        return new ResponseEntity(statusCode, statusDescription, System.currentTimeMillis(), body);
     }
 
 
