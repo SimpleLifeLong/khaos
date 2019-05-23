@@ -13,11 +13,11 @@ public class ResponseEntity<T> {
     private final T body;
 
     public static <T> ResponseEntity ok(T body) {
-        return of(HttpStatus.OK, body);
+        return of(ResponseStatus.OK, body);
     }
 
     public static ResponseEntity serverError() {
-        return of(HttpStatus.INTERNAL_SERVER_ERROR, null);
+        return of(ResponseStatus.INTERNAL_SERVER_ERROR, null);
     }
 
     public static ResponseEntity serverError(String statusDescription) {
@@ -28,8 +28,8 @@ public class ResponseEntity<T> {
         return of(statusCode, statusDescription, null);
     }
 
-    public static <T> ResponseEntity of(HttpStatus status, T body) {
-        return new ResponseEntity(status.value(), status.getReasonPhrase(), body);
+    public static <T> ResponseEntity of(ResponseStatus status, T body) {
+        return new ResponseEntity(status.value(), status.getDescription(), body);
     }
 
     public static <T> ResponseEntity of(Object statusCode, String statusDescription, T body) {
