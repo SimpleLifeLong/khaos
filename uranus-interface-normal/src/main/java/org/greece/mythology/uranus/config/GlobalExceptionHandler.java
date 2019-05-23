@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
@@ -20,6 +21,7 @@ import java.util.List;
 import java.util.Set;
 
 import static org.greece.mythology.tartarus.commons.ResponseStatus.ARGUMENT_NOT_VALID;
+import static org.greece.mythology.tartarus.commons.ResponseStatus.NOT_FOUND;
 
 /**
  * 通用异常处理返回
@@ -65,6 +67,16 @@ public class GlobalExceptionHandler {
         return ResponseEntity.serverError(ARGUMENT_NOT_VALID.value(), message);
     }
 
+    /**
+     * Exception 处理
+     */
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(value = NoHandlerFoundException.class)
+    @ResponseBody
+    public ResponseEntity handlerNotFound(Exception ex) {
+        log.error("NoHandlerFoundException Exception occurred:{}", ex.getMessage());
+        return ResponseEntity.serverError(NOT_FOUND.value(), ex.getMessage());
+    }
 
     /**
      * Exception 处理
