@@ -20,5 +20,9 @@ public class GenericException extends RuntimeException {
         return new GenericException(statusCode, statusDescription);
     }
 
+    public static GenericException of(String statusDescription) {
+        return new GenericException(ResponseStatus.ARGUMENT_NOT_VALID.value(), statusDescription);
+    }
+
 
 }
