@@ -13,4 +13,5 @@ public interface PreventionAlarmRuleRepository extends JpaRepository<PreventionA
 
     PreventionAlarmRule findByIdOrderByStationIdDesc(Long id);
 
+
 }

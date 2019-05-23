@@ -5,6 +5,10 @@ spring:
     name: uranus-interface-normal
   mvc:
     throw-exception-if-no-handler-found: true
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
   resources:
     add-mappings: false
   jpa:
@@ -42,6 +46,7 @@ spring:
     host: 10.39.48.16
     port: 6379
     password: FNpro0426
+
 
 eureka:
   client:
