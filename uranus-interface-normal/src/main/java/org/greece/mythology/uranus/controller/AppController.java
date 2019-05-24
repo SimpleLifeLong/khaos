@@ -5,7 +5,6 @@ import org.greece.mythology.tartarus.commons.ResponseEntity;
 import org.greece.mythology.uranus.service.PreventionAlarmRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,11 +18,11 @@ public class AppController {
 
     @Autowired
     private PreventionAlarmRuleService service;
-
-    @PostMapping("/user")
-    public ResponseEntity getUserInfo(Pageable pageable) {
-        return ResponseEntity.ok(service.getAll(pageable));
-    }
+//
+//    @PostMapping("/user")
+//    public ResponseEntity getUserInfo(Pageable pageable) {
+//        return ResponseEntity.ok(service.getAll(pageable));
+//    }
 
     @PostMapping("/user/page")
     public ResponseEntity getUserInfo222(@RequestBody LocalPageRequest pageable) {

@@ -29,6 +29,7 @@
         <querydsl-jpa.version>4.1.3</querydsl-jpa.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-collections.version>4.3</commons-collections.version>
+        <swagger.version>2.9.2</swagger.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     </properties>
 
@@ -92,6 +93,17 @@
                 <version>${querydsl-jpa.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
