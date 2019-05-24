@@ -1,5 +1,10 @@
 server:
   port: 9990
+  undertow:
+    accesslog:
+      enabled: false
+    io-threads: 10
+    worker-threads: 100
 spring:
   application:
     name: uranus-interface-normal
