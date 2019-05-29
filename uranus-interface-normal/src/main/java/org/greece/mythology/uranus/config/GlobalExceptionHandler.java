@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.greece.mythology.tartarus.commons.ResponseEntity;
 import org.springframework.beans.PropertyAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -65,6 +66,18 @@ public class GlobalExceptionHandler {
             message = violation.getMessage();
         }
         return ResponseEntity.serverError(ARGUMENT_NOT_VALID.value(), message);
+    }
+
+    //EmptyResultDataAccessException
+
+    /**
+     * Exception 处理
+     */
+    @ExceptionHandler(value = EmptyResultDataAccessException.class)
+    @ResponseBody
+    public ResponseEntity handlerEmptyResultDataAccessException(Exception ex) {
+        log.error("EmptyResultDataAccessException Exception occurred:{}", ex.getMessage());
+        return ResponseEntity.serverError(ARGUMENT_NOT_VALID.value(), "数据不存在");
     }
 
     /**
