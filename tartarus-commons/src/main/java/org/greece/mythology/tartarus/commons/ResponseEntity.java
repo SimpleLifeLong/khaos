@@ -18,6 +18,10 @@ public class ResponseEntity<T> {
         return of(ResponseStatus.OK, body);
     }
 
+    public static ResponseEntity ok() {
+        return of(ResponseStatus.OK, null);
+    }
+
     public static ResponseEntity serverError() {
         return of(ResponseStatus.INTERNAL_SERVER_ERROR, null);
     }
