@@ -26,8 +26,10 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/cloud-dev?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
     username: cloud-dev
     password: cloud-dev
-    type: com.zaxxer.hikari.HikariDataSource # 使用druid数据源
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 20
   ###### spring redis ######
   redis:
     database: 12
