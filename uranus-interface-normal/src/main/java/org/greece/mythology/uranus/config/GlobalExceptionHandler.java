@@ -68,20 +68,18 @@ public class GlobalExceptionHandler {
         return ResponseEntity.serverError(ARGUMENT_NOT_VALID.value(), message);
     }
 
-    //EmptyResultDataAccessException
-
     /**
-     * Exception 处理
+     * EmptyResultDataAccessException 处理
      */
     @ExceptionHandler(value = EmptyResultDataAccessException.class)
     @ResponseBody
     public ResponseEntity handlerEmptyResultDataAccessException(Exception ex) {
         log.error("EmptyResultDataAccessException Exception occurred:{}", ex.getMessage());
-        return ResponseEntity.serverError(ARGUMENT_NOT_VALID.value(), "数据不存在");
+        return ResponseEntity.serverError(ARGUMENT_NOT_VALID.value(), ex.getMessage());
     }
 
     /**
-     * Exception 处理
+     * NoHandlerFoundException 处理
      */
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(value = NoHandlerFoundException.class)
