@@ -36,7 +36,10 @@ spring:
     host: 10.39.48.16
     port: 6379
     password: FNpro0426
-
+    lettuce:
+      pool:
+        max-active: 100
+        max-idle: 50
 
 eureka:
   client:
