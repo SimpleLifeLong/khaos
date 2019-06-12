@@ -36,10 +36,20 @@ spring:
     host: 10.39.48.16
     port: 6379
     password: FNpro0426
+    timeout: 60000
     lettuce:
       pool:
-        max-active: 100
-        max-idle: 50
+      max-active: 1024
+      max-idle: 100
+      max-wait: 30
+      min-idle: 20
+executor:
+  scheduler:
+    pool-size: 120
+  task:
+    max-pool-size: 120
+    core-pool-size: 10
+    queue-capacity: 50
 
 eureka:
   client:
