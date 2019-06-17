@@ -46,6 +46,8 @@ spring:
 executor:
   scheduler:
     pool-size: 120
+    expire-after: 60000
+    registry-key: SCHEDULER_LOCK
   task:
     max-pool-size: 120
     core-pool-size: 10
